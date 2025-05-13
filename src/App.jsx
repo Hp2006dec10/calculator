@@ -177,7 +177,7 @@ function App() {
     <div className="h-[100dvh] w-screen flex items-center justify-evenly bg-[rgb(248,246,246)]">
       <div className="w-[100%] h-[100vh] md:h-500 md:w-300 box-border bg-white border-black border-[2.5px]">
         <div className="w-[100%] h-[40%] md:h-[35%]">
-            <div className="h-[40%] w-[100%] text-[rgba(0,0,0,0.5)] text-[1.25rem] flex place-content-end p-[2.5%]">{expression}</div>
+            <div className="h-[40%] w-[100%] text-[rgba(0,0,0,0.5)] text-[1.25rem] flex items-end justify-end p-[2.5%]">{expression}</div>
             <div className="h-[60%] w-[100%] px-[2%] flex">
               <div className="w-[25%] h-[100%] flex flex-col justify-evenly">
                 <div className="w-[100%] h-[50%] flex justify-evenly items-center shadow-[inset_4px_4px_30px_rgba(129,7,7,0.15)] cursor-pointer select-none" onClick={() => handleClearAll()}>CE</div>
