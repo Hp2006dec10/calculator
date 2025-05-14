@@ -68,6 +68,7 @@ function App() {
         });
       }
       setOpCode(0);
+      disableDot(false);
     };   
   } 
 
@@ -94,6 +95,7 @@ function App() {
               return parseInt(current) || 0;
             });
           setOpCode(1);
+          disableDot(false);
         }
       }
     };   
@@ -118,6 +120,7 @@ function App() {
         });
       }
       setOpCode(2);
+      disableDot(false);
     };   
   } 
 
@@ -140,6 +143,7 @@ function App() {
         });
       }
       setOpCode(3);
+      disableDot(false);
     };  
   }
 
@@ -165,7 +169,7 @@ function App() {
     if (!isNaN(firstNum) && !isNaN(secondNum) && opcode != -1){
       console.log(firstNum, secondNum);
       if (opcode == 0) changeCurrent(firstNum + secondNum);
-      else if (opcode == 1) changeCurrent(firstNum - secondNum);
+      else if (opcode == 1) changeCurrent(Number((firstNum - secondNum).toFixed(5)));
       else if (opcode == 2) changeCurrent(firstNum * secondNum);
       else if (opcode == 3 && secondNum != 0) changeCurrent(firstNum / secondNum);
       else changeCurrent("Undefined");
@@ -183,7 +187,7 @@ function App() {
                 <div className="w-[100%] h-[50%] flex justify-evenly items-center shadow-[inset_4px_4px_30px_rgba(129,7,7,0.15)] cursor-pointer select-none" onClick={() => handleClearAll()}>CE</div>
                 <div className={`w-[100%] h-[50%] flex justify-evenly items-center shadow-[inset_4px_4px_30px_rgba(129,7,7,0.15)] cursor-pointer select-none ${disabledClear ? "pointer-events-none opacity-50 cursor-not-allowed" : ""}`} onClick={() => handleClear()}>C</div>
               </div>
-              <div className="w-[75%] h-[100%] flex justify-end items-end text-4xl p-[5%] ">{current}</div>
+              <div className="w-[75%] h-full overflow-x-auto whitespace-nowrap text-4xl p-[5%] text-right">{current}</div>
             </div>
         </div>
         <div className="flex flex-wrap w-[100%] h-[60%] md:h-[65%] items-center justify-evenly py-[1%] text-3xl">
